@@ -13,10 +13,10 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.second_activity)
         val imagen = findViewById<ImageView>(R.id.pokeball)
 
-        val src = intent.getStringExtra(IMG)
+        val id = intent.getIntExtra(IMG, 0)
 
-        src?.let {
-            imagen.setImageResource(R.drawable.pikachu)
-        }
+        if(id != 0)
+            imagen.setImageResource(id)
+
     }
 }
